@@ -24,12 +24,11 @@
 #include <unistd.h>                                                  /*  17 */
 #include "mp32pcm.h"
 #define BUFSIZE (4*MP3_MIN_BUFFER)
-int
-main (void)
+int main (void)
 {
   int id;
 
-  mp3_sample buffer[BUFSIZE];
+  mp3_sample buffer[BUFSIZE]; // array of int[9216]
 
   int size;
 

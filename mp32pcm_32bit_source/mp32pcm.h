@@ -96,21 +96,20 @@ typedef struct mp3_options
 #define MP3_SYNC_1         0x0400                                    /*  35 */
 #define MP3_SYNC_2         0x0000
 #define MP3_SYNC_3         0x0800
-  void (*tag_handler) (int id, int tag_read (int id, void *buffer, int count)   /*  38 */
-    );
-#define MP3_DONT_FLUSH 0x0200                                        /*  73 */
-#define MP3_NO_PARTIAL_FRAME 0x1000                                  /* 330 */
-  unsigned char (*equalizer)[32];                                    /* 444 */
+  /* 38 */
+  void (*tag_handler) (int id, int tag_read (int id, void *buffer, int count));
+#define MP3_DONT_FLUSH 0x0200                               /*  73 */
+#define MP3_NO_PARTIAL_FRAME 0x1000                         /* 330 */
+  unsigned char (*equalizer)[32];                             /* 444 */
 } mp3_options;
 
-extern int mp3_open (                                                /*  11 */
-                      int (*input_read) (int id, void *buffer, size_t size)     /*  12 */
-                      , mp3_options * option_pointer                 /*  18 */
-  );
+/* 11, 12, 18 */
+extern int mp3_open (int (*input_read) (int id, void *buffer, size_t size),
+		     mp3_options * option_pointer);
 
-extern int
-mp3_read (int id, mp3_sample * buffer, int size)                     /*  13 */
- ;
+/* 13 */
+extern int mp3_read (int id, mp3_sample * buffer, int size);    
 
-     extern int mp3_close (int id)                                   /*  16 */
- ;
+/* 16 */
+extern int mp3_close (int id);     
+
