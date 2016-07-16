@@ -19,9 +19,13 @@
     along with mp32pcm; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+		I found this solution for including unistd.h:
+		http://stackoverflow.com/questions/341817/is-there-a-replacement-for-unistd-h-for-windows-visual-c
+
 */
 
-#include <unistd.h>                                                  /*  17 */
+//include <unistd.h>                                                  /*  17 */
+#include <io.h>    // supposedly unistd.h WIN equivalent
 #include "mp32pcm.h"
 #define BUFSIZE (4*MP3_MIN_BUFFER)
 int main (void)

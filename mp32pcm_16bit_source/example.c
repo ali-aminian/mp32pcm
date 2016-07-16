@@ -21,7 +21,8 @@
 
 */
 
-#include <unistd.h>                                                  /*  17 */
+//#include <unistd.h>                                                  /*  17 */
+#include <io.h>
 #include "mp32pcm.h"
 #define BUFSIZE (4*MP3_MIN_BUFFER)
 int
